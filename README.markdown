@@ -54,4 +54,4 @@ In other words, just write your code as you would without the plugin and you'll 
 
 ## Licensing
 
-You're free to do whatever you want with this plugin.
+You're free to do whatever you want with this plugin. How about this as a license?
