@@ -40,7 +40,17 @@ Click on the nice cloud icon above, and download the zip file containing this pl
 
 ## How to Use
 
-Just write your code, as you would without the plugin. So just after you type the first non-ASCII character on any Ruby file, the plugin will automaticaly adds a #encoding: utf-8 declaration on the top of the file. The opposite is also true: it will remove the encoding declaration when you delete the last non-ASCII character. So, as I've said, just write your code and let the plugin make its work.
+Auto Encoding for Ruby will add a #encoding: utf-8 declaration on top of Ruby files on these situations:
+
+* Just after you type the first non-ASCII character of the file;
+* When you open a file with non-ASCII characters and no encoding declaration.
+
+It will also remove the encoding declaration on the following cases:
+
+* Just after you delete the last non-ASCII character;
+* When you open a file with an encoding declaration but without non-ASCII characters.
+
+In other words, just write your code as you would without the plugin and you'll be fine.
 
 ## Licensing
 

@@ -3,7 +3,13 @@ import sublime
 import sublime_plugin
 
 class AutoEncodingForRuby(sublime_plugin.EventListener):
+  def on_load(self, view):
+    self.handle_encoding_declaration_on(view)
+
   def on_modified(self, view):
+    self.handle_encoding_declaration_on(view)
+
+  def handle_encoding_declaration_on(self, view):
     if self.is_ruby_file_on(view):
       try:
         self.decode_to_ascii_the_content_of(view)
