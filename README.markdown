@@ -36,7 +36,7 @@ $ git clone git://github.com/elomarns/auto-encoding-for-ruby.git "Auto Encoding 
 
 ### Without Git
 
-Click on the nice cloud icon above, and download the zip file containing this plugin. Then, unzip the file and move the resulting folder to your Packages directory.
+Click on the nice cloud icon above, and download the zip file containing this plugin. Then unzip the file and move the resulting folder to your Packages directory.
 
 ## How to Use
 
