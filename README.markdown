@@ -13,25 +13,25 @@ Open your terminal application and go to your Packages directory, whose location
 * OS X:
 
     ```shell
-    $ cd ~/Library/Application\ Support/Sublime\ Text\ 2/Packages
+    cd ~/Library/Application\ Support/Sublime\ Text\ 2/Packages
     ```
 
 * Linux:
 
     ```shell
-    $ cd ~/.Sublime\ Text 2/Packages/
+    cd ~/.Sublime\ Text 2/Packages/
     ```
 
 * Windows:
 
     ```shell
-    $ cd %APPDATA%/Sublime Text 2/Packages/
+    cd %APPDATA%/Sublime Text 2/Packages/
     ```
 
 After this, you just need to clone this repository:
 
 ```shell
-$ git clone git://github.com/elomarns/auto-encoding-for-ruby.git "Auto Encoding for Ruby"
+git clone git://github.com/elomarns/auto-encoding-for-ruby.git "Auto Encoding for Ruby"
 ```
 
 ### Without Git
