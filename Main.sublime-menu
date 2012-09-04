@@ -1,0 +1,34 @@
+[
+  {
+    "caption": "Preferences",
+    "mnemonic": "n",
+    "id": "preferences",
+    "children":
+    [
+      {
+        "caption": "Package Settings",
+        "mnemonic": "P",
+        "id": "package-settings",
+        "children":
+        [
+          {
+            "caption": "Auto Encoding for Ruby",
+            "children":
+            [
+              {
+                "command": "open_file",
+                "args": { "file": "${packages}/Auto Encoding for Ruby/Preferences.sublime-settings" },
+                "caption": "Settings – Default"
+              },
+              {
+                "command": "open_file",
+                "args": { "file": "${packages}/User/Auto Encoding for Ruby.sublime-settings" },
+                "caption": "Settings – User"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

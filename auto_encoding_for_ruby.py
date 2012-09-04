@@ -10,7 +10,7 @@ class AutoEncodingForRuby(sublime_plugin.EventListener):
     self.handle_encoding_declaration_on(view)
 
   def handle_encoding_declaration_on(self, view):
-    if self.is_ruby_file_on(view):
+    if self.is_allowed_to_generate_encoding_declaration_on_current_syntax(view):
       try:
         self.decode_to_ascii_the_content_of(view)
       except UnicodeEncodeError:
@@ -20,8 +20,11 @@ class AutoEncodingForRuby(sublime_plugin.EventListener):
         if self.has_encoding_declaration_on_first_line_of(view):
           self.remove_encoding_declaration_on_the_first_line_of(view)
 
-  def is_ruby_file_on(self, view):
-    return re.search("Ruby", view.settings().get("syntax"), re.IGNORECASE)
+  def is_allowed_to_generate_encoding_declaration_on_current_syntax(self, view):
+    allowed_syntaxes = view.settings().get("allowed_syntaxes")
+    current_syntax = view.settings().get("syntax")
+
+    return current_syntax in allowed_syntaxes
 
   def decode_to_ascii_the_content_of(self, view):
     file_content = view.substr(sublime.Region(0, view.size()))

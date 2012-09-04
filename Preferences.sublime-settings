@@ -1,0 +1,8 @@
+{
+  // Syntaxes where Auto Encoding for Ruby will be activated.
+  "allowed_syntaxes":
+  [
+    "Packages/Ruby/Ruby.tmLanguage",
+    "Packages/RSpec/RSpec.tmLanguage"
+  ]
+}
