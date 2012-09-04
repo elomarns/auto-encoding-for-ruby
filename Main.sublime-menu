@@ -24,6 +24,10 @@
                 "command": "open_file",
                 "args": { "file": "${packages}/User/Auto Encoding for Ruby.sublime-settings" },
                 "caption": "Settings – User"
+              },
+              {
+                "command": "open_file_settings",
+                "caption": "Settings – Syntax Specific – User"
               }
             ]
           }

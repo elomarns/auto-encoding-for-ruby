@@ -4,5 +4,14 @@
   [
     "Packages/Ruby/Ruby.tmLanguage",
     "Packages/RSpec/RSpec.tmLanguage"
-  ]
+  ],
+
+  // This is the encoding declaration that will be inserted on the top of your files.
+  "encoding_declaration": "#encoding: utf-8\n\n",
+
+  // The first line of your files will be checked against this regex to verify if it
+  // already has an encoding declaration. So if you change the default encoding
+  // declaration above, you must change this accordingly. Don't forget to escape
+  // character classes as "\s" to "\\s", for example.
+  "encoding_declaration_regex": "^\\s*#\\s*encoding\\s*:\\s*utf-8\\s*$"
 }

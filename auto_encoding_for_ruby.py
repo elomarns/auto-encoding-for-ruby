@@ -32,14 +32,17 @@ class AutoEncodingForRuby(sublime_plugin.EventListener):
     file_content.decode("ascii")
 
   def has_encoding_declaration_on_first_line_of(self, view):
-    return re.search("^\s*#\s*encoding\s*:\s*utf-8\s*$", self.first_line_from(view), re.IGNORECASE)
+    encoding_declaration_regex = view.settings().get("encoding_declaration_regex")
+
+    return re.search(encoding_declaration_regex, self.first_line_from(view), re.IGNORECASE)
 
   def first_line_from(self, view):
     return view.substr(view.full_line(0))
 
   def add_encoding_declaration_on_the_first_line_of(self, view):
     edit = view.begin_edit()
-    view.insert(edit, 0, "#encoding: utf-8\n\n")
+    encoding_declaration = view.settings().get("encoding_declaration")
+    view.insert(edit, 0, encoding_declaration)
     view.end_edit(edit)
 
   def remove_encoding_declaration_on_the_first_line_of(self, view):
