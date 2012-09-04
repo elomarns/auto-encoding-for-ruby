@@ -3,6 +3,7 @@
   "allowed_syntaxes":
   [
     "Packages/Ruby/Ruby.tmLanguage",
+    "Packages/Rails/Ruby on Rails.tmLanguage",
     "Packages/RSpec/RSpec.tmLanguage"
   ],
 
