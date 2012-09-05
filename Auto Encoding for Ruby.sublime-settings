@@ -1,3 +1,6 @@
+// Don't change any setting on this file. If you want to override the default
+// behaviour, change the settings values on your
+// Packages/User/Auto Encoding for Ruby.sublime-settings file.
 {
   // Syntaxes where Auto Encoding for Ruby will be activated.
   "allowed_syntaxes":
