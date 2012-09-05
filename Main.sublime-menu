@@ -17,7 +17,7 @@
             [
               {
                 "command": "open_file",
-                "args": { "file": "${packages}/Auto Encoding for Ruby/Preferences.sublime-settings" },
+                "args": { "file": "${packages}/Auto Encoding for Ruby/Auto Encoding for Ruby.sublime-settings" },
                 "caption": "Settings – Default"
               },
               {

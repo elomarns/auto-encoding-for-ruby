@@ -3,6 +3,9 @@ import sublime
 import sublime_plugin
 
 class AutoEncodingForRuby(sublime_plugin.EventListener):
+  def __init__(self):
+    self.settings = sublime.load_settings("Auto Encoding for Ruby.sublime-settings")
+
   def on_load(self, view):
     self.handle_encoding_declaration_on(view)
 
@@ -21,10 +24,18 @@ class AutoEncodingForRuby(sublime_plugin.EventListener):
           self.remove_encoding_declaration_on_the_first_line_of(view)
 
   def is_allowed_to_generate_encoding_declaration_on_current_syntax(self, view):
-    allowed_syntaxes = view.settings().get("allowed_syntaxes")
-    current_syntax = view.settings().get("syntax")
+    allowed_syntaxes = self.get_settings("allowed_syntaxes", view)
+    current_syntax = self.get_settings("syntax", view)
 
     return current_syntax in allowed_syntaxes
+
+  def get_settings(self, name, view, default = None):
+    setting_value = view.settings().get(name, default)
+
+    if setting_value == None:
+      setting_value = self.settings.get(name)
+
+    return setting_value
 
   def decode_to_ascii_the_content_of(self, view):
     file_content = view.substr(sublime.Region(0, view.size()))
@@ -32,7 +43,7 @@ class AutoEncodingForRuby(sublime_plugin.EventListener):
     file_content.decode("ascii")
 
   def has_encoding_declaration_on_first_line_of(self, view):
-    encoding_declaration_regex = view.settings().get("encoding_declaration_regex")
+    encoding_declaration_regex = self.get_settings("encoding_declaration_regex", view)
 
     return re.search(encoding_declaration_regex, self.first_line_from(view), re.IGNORECASE)
 
@@ -41,7 +52,7 @@ class AutoEncodingForRuby(sublime_plugin.EventListener):
 
   def add_encoding_declaration_on_the_first_line_of(self, view):
     edit = view.begin_edit()
-    encoding_declaration = view.settings().get("encoding_declaration")
+    encoding_declaration = self.get_settings("encoding_declaration", view)
     view.insert(edit, 0, encoding_declaration)
     view.end_edit(edit)
 
