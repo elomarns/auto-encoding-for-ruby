@@ -37,20 +37,20 @@ class AutoEncodingForRuby(sublime_plugin.EventListener):
 
     return setting_value
 
-  def no_comments(self, string):
-    no_comments_string = ''
-
-    for line in string.split('\n'):
-        li = line.strip()
-        if not li.startswith("#"):
-            no_comments_string += line.rstrip() + '\n'
-
-    return no_comments_string
-
   def decode_to_ascii_the_content_of(self, view):
-    file_content = self.no_comments(view.substr(sublime.Region(0, view.size())))
+    self.content_without_comments_of(view).decode("ascii")
 
-    file_content.decode("ascii")
+  def content_without_comments_of(self, view):
+    file_content = view.substr(sublime.Region(0, view.size()))
+    content_without_comments = ""
+
+    for line in file_content.split("\n"):
+      striped_line = line.strip()
+
+      if not striped_line.startswith("#"):
+        content_without_comments += striped_line.rstrip() + "\n"
+
+    return content_without_comments
 
   def has_encoding_declaration_on_first_line_of(self, view):
     encoding_declaration_regex = self.get_settings("encoding_declaration_regex", view)
