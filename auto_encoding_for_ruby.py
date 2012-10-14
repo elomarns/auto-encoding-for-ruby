@@ -67,6 +67,9 @@ class AutoEncodingForRuby(sublime_plugin.EventListener):
     view.end_edit(edit)
 
   def remove_encoding_declaration_on_the_first_line_of(self, view):
+    if not self.get_settings("remove_encoding_declaration", view):
+      return
+
     edit = view.begin_edit()
     self.erase_first_line_of(view, edit)
 
