@@ -10,7 +10,12 @@ class AutoEncodingForRuby(sublime_plugin.EventListener):
     self.handle_encoding_declaration_on(view)
 
   def on_modified(self, view):
-    self.handle_encoding_declaration_on(view)
+    if not self.get_settings("checking_encoding_on_pre_save_only", view):
+      self.handle_encoding_declaration_on(view)
+
+  def on_pre_save(self, view):
+    if self.get_settings("checking_encoding_on_pre_save_only", view):
+      self.handle_encoding_declaration_on(view)
 
   def handle_encoding_declaration_on(self, view):
     if self.is_allowed_to_generate_encoding_declaration_on_current_syntax(view):
