@@ -7,7 +7,8 @@
   [
     "Packages/Ruby/Ruby.tmLanguage",
     "Packages/Rails/Ruby on Rails.tmLanguage",
-    "Packages/RSpec/RSpec.tmLanguage"
+    "Packages/RSpec/RSpec.tmLanguage",
+    "Packages/Ruby on Rails snippets/Ruby on Rails.tmLanguage"
   ],
 
   // This is the encoding declaration that will be inserted on the top of your files.
