@@ -107,6 +107,9 @@ This is an example of a changing in this setting:
 
 Don't forget to escape character classes on `"encoding_declaration_regex"` setting.
 
+### Always add encoding declaration
+
+By default, this plug in only will add the encoding declaration to the file if it detects a non-ASCII character. If you want to always add the encoding declaration regardless of whether there is a non-ASCII character or not then you change the setting `"always_generate_encoding_declaration"` to `true`.
 ## Licensing
 
 You're free to do whatever you want with this plugin. How about this as a license?
