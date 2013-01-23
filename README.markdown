@@ -1,6 +1,6 @@
 # Auto Encoding for Ruby
 
-I hate the need to include `#encoding: utf-8` on every Ruby file with non-ASCII characters. So I've created this plugin to save me from this boring task. It automatically adds an encoding declaration on the top of Ruby files when needed, and remove it when it's not necessary anymore. Simple as that.
+I hate the need to include `# encoding: utf-8` on every Ruby file with non-ASCII characters. So I've created this plugin to save me from this boring task. It automatically adds an encoding declaration on the top of Ruby files when needed, and remove it when it's not necessary anymore. Simple as that.
 
 ## Installation
 
@@ -69,7 +69,7 @@ Although this plugin works out of the box, you can tweak it to your needs. Just 
     "Packages/RSpec/RSpec.tmLanguage"
   ],
 
-  "encoding_declaration": "#encoding: utf-8\n\n",
+  "encoding_declaration": "# encoding: utf-8\n\n",
   "encoding_declaration_regex": "^\\s*#\\s*encoding\\s*:\\s*utf-8\\s*$",
   "remove_encoding_declaration": true,
   "checking_encoding_on_pre_save_only": false
@@ -92,7 +92,7 @@ By default, Auto Encoding for Ruby will works with Ruby, Ruby on Rails and RSpec
 
 ### Encoding Declaration
 
-The default encoding declaration is `#encoding: #utf-8`, but you can change it if you want. To do this, just set a new value to `"encoding_declaration"` setting on your `Packages/User/Auto Encoding for Ruby.sublime-settings` file. But if you change this setting, you must change `"encoding_declaration_regex"` too. This setting is used to check if your file already has an encoding declaration. So if you change only the encoding declaration but don't update the regex, the plugin won't be able to know if your file already has an encoding declaration, and it will add it infinitely.
+The default encoding declaration is `# encoding: #utf-8`, but you can change it if you want. To do this, just set a new value to `"encoding_declaration"` setting on your `Packages/User/Auto Encoding for Ruby.sublime-settings` file. But if you change this setting, you must change `"encoding_declaration_regex"` too. This setting is used to check if your file already has an encoding declaration. So if you change only the encoding declaration but don't update the regex, the plugin won't be able to know if your file already has an encoding declaration, and it will add it infinitely.
 
 This is an example of a changing in this setting:
 
