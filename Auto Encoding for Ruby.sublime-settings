@@ -20,6 +20,10 @@
   // character classes as "\s" to "\\s", for example.
   "encoding_declaration_regex": "^\\s*#\\s*encoding\\s*:\\s*utf-8\\s*$",
 
+  // Set to True if you want to always add the encoding declaration to matching syntaxes
+  // regardless of whether the file has any non-ASCII characters or not
+  "always_generate_encoding_declaration": false,
+
   // Set to false if you want to keep encoding declaration even it became not need
   "remove_encoding_declaration": true,
 

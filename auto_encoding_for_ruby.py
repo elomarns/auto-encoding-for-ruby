@@ -19,14 +19,21 @@ class AutoEncodingForRuby(sublime_plugin.EventListener):
 
   def handle_encoding_declaration_on(self, view):
     if self.is_allowed_to_generate_encoding_declaration_on_current_syntax(view):
-      try:
-        self.decode_to_ascii_the_content_of(view)
-      except UnicodeEncodeError:
+      if self.always_generate_encoding_declaration(view):
         if not self.has_encoding_declaration_on_first_line_of(view):
-          self.add_encoding_declaration_on_the_first_line_of(view)
+            self.add_encoding_declaration_on_the_first_line_of(view)
       else:
-        if self.has_encoding_declaration_on_first_line_of(view):
-          self.remove_encoding_declaration_on_the_first_line_of(view)
+        try:
+          self.decode_to_ascii_the_content_of(view)
+        except UnicodeEncodeError:
+          if not self.has_encoding_declaration_on_first_line_of(view):
+            self.add_encoding_declaration_on_the_first_line_of(view)
+        else:
+          if self.has_encoding_declaration_on_first_line_of(view):
+            self.remove_encoding_declaration_on_the_first_line_of(view)
+
+  def always_generate_encoding_declaration(self, view):
+    return self.get_settings("always_generate_encoding_declaration", view)
 
   def is_allowed_to_generate_encoding_declaration_on_current_syntax(self, view):
     allowed_syntaxes = self.get_settings("allowed_syntaxes", view)
