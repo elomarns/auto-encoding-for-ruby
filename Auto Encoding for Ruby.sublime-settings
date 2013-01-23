@@ -12,7 +12,7 @@
   ],
 
   // This is the encoding declaration that will be inserted on the top of your files.
-  "encoding_declaration": "#encoding: utf-8\n\n",
+  "encoding_declaration": "# encoding: utf-8\n\n",
 
   // The first line of your files will be checked against this regex to verify if it
   // already has an encoding declaration. So if you change the default encoding
