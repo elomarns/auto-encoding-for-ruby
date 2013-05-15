@@ -7,14 +7,15 @@ class AutoEncodingForRuby(sublime_plugin.EventListener):
     self.settings = sublime.load_settings("Auto Encoding for Ruby.sublime-settings")
 
   def on_load(self, view):
-    self.handle_encoding_declaration_on(view)
+    if self.get_settings("check_encoding_on_load", view):
+      self.handle_encoding_declaration_on(view)
 
   def on_modified(self, view):
-    if not self.get_settings("checking_encoding_on_pre_save_only", view):
+    if self.get_settings("check_encoding_on_keystroke", view):
       self.handle_encoding_declaration_on(view)
 
   def on_pre_save(self, view):
-    if self.get_settings("checking_encoding_on_pre_save_only", view):
+    if self.get_settings("check_encoding_on_save", view):
       self.handle_encoding_declaration_on(view)
 
   def handle_encoding_declaration_on(self, view):
