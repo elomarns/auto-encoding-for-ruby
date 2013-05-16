@@ -27,6 +27,12 @@
   // Set to false if you want to keep encoding declaration even it became not need
   "remove_encoding_declaration": true,
 
-  // Set to false if you don't want to checking encoding on every keystroke
-  "checking_encoding_on_pre_save_only": false
+  // Set to false if you don't want to check encoding when opening a file
+  "check_encoding_on_load": true,
+
+  // Set to false if you don't want to check encoding on every keystroke
+  "check_encoding_on_keystroke": true,
+
+  // Set to false if you don't want to check encoding when saving a file
+  "check_encoding_on_save": true
 }

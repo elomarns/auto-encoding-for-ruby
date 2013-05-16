@@ -72,7 +72,9 @@ Although this plugin works out of the box, you can tweak it to your needs. Just 
   "encoding_declaration": "# encoding: utf-8\n\n",
   "encoding_declaration_regex": "^\\s*#\\s*encoding\\s*:\\s*utf-8\\s*$",
   "remove_encoding_declaration": true,
-  "checking_encoding_on_pre_save_only": false
+  "check_encoding_on_load": true,
+  "check_encoding_on_keystroke": true,
+  "check_encoding_on_save": true
 }
 ```
 
@@ -101,7 +103,9 @@ This is an example of a changing in this setting:
   "encoding_declaration": "# -*- encoding : utf-8 -*-\n\n",
   "encoding_declaration_regex": "^\\s*#\\s*-\\*-\\s*encoding\\s*:\\s*utf-8\\s*-\\*-\\s*$",
   "remove_encoding_declaration": false,
-  "checking_encoding_on_pre_save_only": true
+  "check_encoding_on_load": true,
+  "check_encoding_on_keystroke": true,
+  "check_encoding_on_save": true
 }
 ```
 
